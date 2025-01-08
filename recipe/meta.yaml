@@ -1,4 +1,4 @@
-{% set version = "0.1.0" %}
+{% set version = "0.2.0" %}
 
 package:
   name: geoindex-rs
@@ -6,13 +6,13 @@ package:
 
 source:
   url: https://github.com/kylebarron/geo-index/archive/refs/tags/py-v{{ version }}.tar.gz
-  sha256: 11d8fae033748c142b68e184552dfe7e7a74efdd7a4fe9d3e4d9593eff92665c
+  sha256: 998ea59d04524deefc5bf587b2d3d581b4568ee753562d673002d3387abfad40
 
 build:
   script:
     - {{ PYTHON }} -m pip install ./python -vv
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
-  number: 2
+  number: 3
 
 requirements:
   build:
@@ -28,6 +28,7 @@ requirements:
     - maturin >=1.4.0,<2.0
     - pip
   run:
+    - arro3-core
     - python
 
 test:
