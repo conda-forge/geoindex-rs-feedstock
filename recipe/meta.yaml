@@ -12,7 +12,7 @@ build:
   script:
     - {{ PYTHON }} -m pip install ./python -vv
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
-  number: 1
+  number: 2
 
 requirements:
   build:
@@ -28,7 +28,6 @@ requirements:
     - maturin >=1.4.0,<2.0
     - pip
   run:
-    - arro3-core
     - python
 
 test:
