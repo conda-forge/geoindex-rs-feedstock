@@ -1,0 +1,57 @@
+context:
+  name: geoindex-rs
+  version: "0.2.0"
+
+package:
+  name: "${{ name|lower }}"
+  version: "${{ version }}"
+
+source:
+  url: https://github.com/kylebarron/geo-index/archive/refs/tags/py-v${{ version }}.tar.gz
+  sha256: 998ea59d04524deefc5bf587b2d3d581b4568ee753562d673002d3387abfad40
+
+build:
+  number: 5
+  script:
+    - ${{ PYTHON }} -m pip install ./python -vv
+    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+        - crossenv
+        - maturin >=1.7.0,<2.0
+    - ${{ stdlib("c") }}
+    - ${{ compiler("c") }}
+    - ${{ compiler("rust") }}
+    - cargo-bundle-licenses
+  host:
+    - python
+    - maturin >=1.4.0,<2.0
+    - pip
+  run:
+    - arro3-core
+    - python
+
+tests:
+  - python:
+      imports:
+        - geoindex_rs
+      pip_check: true
+
+about:
+  license: MIT
+  license_file:
+    - LICENSE_MIT
+    - THIRDPARTY.yml
+  summary: Fast, memory-efficient 2D spatial indexes for Python.
+  homepage: https://kylebarron.dev/geo-index/latest/
+  repository: https://github.com/kylebarron/geo-index
+  documentation: https://kylebarron.dev/geo-index/latest/
+
+extra:
+  recipe-maintainers:
+    - kylebarron

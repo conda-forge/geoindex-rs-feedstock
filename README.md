@@ -3,15 +3,15 @@ About geoindex-rs-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/geoindex-rs-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/kylebarron/geo-index
+Home: https://kylebarron.dev/geo-index/latest/
 
-Package license: [MIT](https://github.com/kylebarron/geo-index/blob/main/LICENSE_MIT)
+Package license: MIT
 
 Summary: Fast, memory-efficient 2D spatial indexes for Python.
 
 Development: https://github.com/kylebarron/geo-index
 
-Documentation: https://github.com/kylebarron/geo-index/tree/main/python
+Documentation: https://kylebarron.dev/geo-index/latest/
 
 Current build status
 ====================
