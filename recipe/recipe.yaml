@@ -48,8 +48,9 @@ about:
     - LICENSE_MIT
     - THIRDPARTY.yml
   summary: Fast, memory-efficient 2D spatial indexes for Python.
-  homepage: https://github.com/kylebarron/geo-index
+  homepage: https://kylebarron.dev/geo-index/latest/
   repository: https://github.com/kylebarron/geo-index
+  documentation: https://kylebarron.dev/geo-index/latest/
 
 extra:
   recipe-maintainers:
