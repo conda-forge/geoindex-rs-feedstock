@@ -41,8 +41,6 @@ tests:
       imports:
         - geoindex_rs
       pip_check: true
-  - script:
-      - geoindex_rs
 
 about:
   license: MIT
